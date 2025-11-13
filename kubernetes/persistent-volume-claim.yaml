@@ -6,8 +6,8 @@ metadata:
 spec:
   selector:
     matchLabels:
-      namespace: <seu_usuario>
-  storageClassName: default-storage-class-<seu_usuario>
+      namespace: glaubersantos
+  storageClassName: default-storage-class-glaubersantos
   accessModes:
     - ReadWriteMany
   resources:

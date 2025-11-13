@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: rest-api
-        image: seu_usuario/spotify-rest-api:1.0
+        image: glaubersantos/spotify-rest-api:1.0
         ports:
         - containerPort: 5000
         env:

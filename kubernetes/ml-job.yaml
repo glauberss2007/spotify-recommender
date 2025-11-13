@@ -8,7 +8,7 @@ spec:
     spec:
       containers:
       - name: ml-model
-        image: seu_usuario/spotify-ml-model:1.0
+        image: glaubersantos/spotify-ml-model:1.0
         env:
         - name: DATASET_PATH
           value: "/datasets/2023_spotify_ds1.csv"
