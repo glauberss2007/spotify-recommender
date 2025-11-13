@@ -4,16 +4,16 @@ metadata:
   name: spotify-recommender
   namespace: argocd
 spec:
-  project: <seu_usuario>-project
+  project: glaubersantos-project
   
   source:
-    repoURL: 'https://github.com/seu_usuario/spotify-recommender.git'
+    repoURL: 'https://github.com/glauberss2007/spotify-recommender.git'
     path: 'kubernetes'
     targetRevision: HEAD
   
   destination:
     server: 'https://kubernetes.default.svc'
-    namespace: <seu_usuario>
+    namespace: glaubersantos
   
   syncPolicy:
     automated:
