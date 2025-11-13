@@ -1,0 +1,35 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: ml-training-job
+  namespace: glaubersantos
+spec:
+  template:
+    spec:
+      containers:
+      - name: ml-model
+        image: seu_usuario/spotify-ml-model:1.0
+        env:
+        - name: DATASET_PATH
+          value: "/datasets/2023_spotify_ds1.csv"
+        - name: MODEL_PATH
+          value: "/shared/model.pickle"
+        - name: MIN_SUPPORT
+          value: "0.01"
+        - name: MIN_CONFIDENCE
+          value: "0.5"
+        volumeMounts:
+        - name: dataset-volume
+          mountPath: /datasets
+          readOnly: true
+        - name: shared-volume
+          mountPath: /shared
+      volumes:
+      - name: dataset-volume
+        hostPath:
+          path: /home/datasets/spotify
+      - name: shared-volume
+        persistentVolumeClaim:
+          claimName: project2-pvc
+      restartPolicy: Never
+  backoffLimit: 1

@@ -1,0 +1,23 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: spotify-recommender
+  namespace: argocd
+spec:
+  project: <seu_usuario>-project
+  
+  source:
+    repoURL: 'https://github.com/seu_usuario/spotify-recommender.git'
+    path: 'kubernetes'
+    targetRevision: HEAD
+  
+  destination:
+    server: 'https://kubernetes.default.svc'
+    namespace: <seu_usuario>
+  
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+    - CreateNamespace=true

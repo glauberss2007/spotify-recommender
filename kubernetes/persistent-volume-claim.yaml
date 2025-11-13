@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: project2-pvc
+  namespace: glaubersantos
+spec:
+  selector:
+    matchLabels:
+      namespace: <seu_usuario>
+  storageClassName: default-storage-class-<seu_usuario>
+  accessModes:
+    - ReadWriteMany
+  resources:
+    requests:
+      storage: 1Gi

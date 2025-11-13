@@ -1,0 +1,34 @@
+# Python
+__pycache__/
+*.py[cod]
+*.class
+*.so
+.Python
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Dataset files (não versionar os dados grandes)
+*.csv
+*.csv.gz
+
+# Model files (não versionar modelos serializados)
+*.pickle
+*.pkl
+*.model
+
+# Logs
+*.log
+logs/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Temporários
+.tmp/
+temp/
